@@ -1,0 +1,60 @@
+{% extends 'base/index.html' %}
+{% load static %}
+
+{% block buycourse %}
+    <div class="buycourse">
+        <div class="hed">
+            <div class="heading_title pt-5 text-light">
+                <h2 id="text" class="font-weight-bold text-uppercase">Purchase your Coursess</h2>
+            </div>
+        </div>
+        <div class="container">
+            <div class="courseSecton d-flex align-items-center justify-content-around flex-wrap">
+                <div class="card school">
+                    <img class="card-img-top" src="{{course_list.course_img.url}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title text-dark">{{course_list.title}}</h4>
+                        <p class="card-text text-info">{{course_list.company}}</p>
+                        <div class="cardInfos1 d-flex align-items-center justify-content-between">
+                            <div class="time">
+                                <span><i class="fa fa-clock-o" aria-hidden="true"></i>{{course_list.duration}}</span>
+                            </div>
+                            <div class="level">
+                                <span class="badge badge-light">{{course_list.level}}</span>
+                            </div>
+                        </div>
+                        <div class="cardInfos d-flex align-items-center justify-content-center">
+                            <div class="level pt-4">
+                                <h2>₹ {{course_list.price}}</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="itemsDetails bg-light">
+                    <div class="cordet d-block">
+                        <h3>Course Name:-</h3>
+                        <p><strong>{{course_list.title}}</strong></p>
+                    </div>
+                    <div class="cordet d-block">
+                        <h3>Company Name:-</h3>
+                        <p><strong>{{course_list.company}}</strong></p>
+                    </div>
+                    <div class="cordet d-block">
+                        <h3>Price:-</h3>
+                        <p><strong>{{course_list.price}}</strong></p>
+                    </div>
+                    <div class="buttons text-center pt-4 pb-1">
+                        <form action="/buy-courses" class="d-inline">
+                            <input type="hidden" name="prod_id" value="{{course_list.id}}" id="prod_id">
+                            <button type="submit" class="btn btn-info">Buy Now</button>
+                        </form>
+                        <form action="/add-to-cart" class="d-inline">
+                            <input type="hidden" name="prod_id" value="{{course_list.id}}" id="prod_id">
+                            <button type="submit" class="btn btn-primary">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock buycourse %}

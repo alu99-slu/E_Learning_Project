@@ -1,0 +1,48 @@
+{% extends 'base/index.html' %}
+{% load static %}
+
+{% block authenticate_content %}
+    <div class="signIn">
+        <div class="hed">
+            <div class="heading_title pt-5 text-light">
+                <h2 id="text" class="font-weight-bold text-uppercase">Create Account</h2>
+            </div>
+        </div>
+        <div class="container">
+            <div class="alert_msg text-center pt-3">
+                {% if messages %}
+                    {% for message in messages %}
+                        <h4 {% if message.tags %}
+                            class="alert alert-{{message.tags}} mb-5"{% endif %}>{{message}}</h4>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <div class="fromdet">
+                <form action="" method="post" novalidate>
+                <div class="singUp_img text-center">
+                    <img src="{% static 'img/signin.png' %}" alt="" width="300px">
+                </div>
+                    {% csrf_token %}
+                    {% for fm in form %}
+                        <div class="form-group">
+                            {{fm.label_tag}} {{fm}}
+                            <small class="text-danger">{{fm.errors|striptags }}</small>
+                        </div>
+                        {% if form.non_field_errors %}
+                            {% for error in form.non_field_errors %}
+                                <p class="alert alert-danger my-3">{{error}}</p>
+                            {% endfor %}
+                        {% endif %}
+                    {% endfor %}
+                    <div class="al_account font-weight-light pl-1 pb-3">
+                        <span>already have an account?</span>
+                        <a href="{% url 'login' %}">LogIn Account</a>
+                    </div>
+                    <div class="submit pt-3 text-center">
+                        <input type="submit" value="SignUp" id="submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock authenticate_content %}

@@ -1,0 +1,64 @@
+.heading_title h2 span{
+    color: rgb(6, 255, 201);
+}
+.internship .internlist {
+    padding-top: var(--section-dision-max);
+    padding-bottom: var(--section-dision-max);
+}
+.internship .internlist .intern{
+    padding: 20px 30px;
+    background: #f7feff;
+    border-radius: 20px;
+    box-shadow: 0 3px 7px rgba(0,0,0,.3);
+    margin-bottom: 50px;
+}
+.internship .internlist .filter{
+    height: auto;
+    background: linear-gradient(260deg, #cacaca,#c7e6f3) ;
+    box-shadow: 0 2px 5px rgba(0,0,0,.3);
+    padding: 30px;
+}
+.internship .internlist .filter p{
+    font-weight: bold;
+    font-size: var(--small-font);
+    border-bottom: 2px solid #1219a0;
+}
+.internship .internlist .filter p i{
+    color: var(--fade-primary-color);
+}
+.internship .internlist .filter .filterBox ul li:hover{
+    transition: all .3s ease-in-out;
+    color: #f0f0f0;
+}
+.internship .internlist .filter .filterBox ul li{
+    padding: 5px 10px;
+    font-size: var(--smallest-font);
+    font-weight: bold;
+    cursor: pointer;
+    background: linear-gradient(120deg,#00a2ff,#00ffbf);
+    color: var(--background-color);
+    margin-bottom: 20px;
+    width: fit-content;
+    border-radius: 20px;
+    box-shadow: 0 5px 10px #00a2ff;
+}
+.internship .internlist .filter .filterBox ul li:last-child{
+    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.apply_intern .internlist .intern {
+    box-shadow: none;
+    border: 1px solid royalblue;
+}
+.apply_intern .internlist .intern .intern_details p,h3{
+    margin: 0;
+    padding: 0;
+}
+/* .apply_intern .internlist .intern .intern_details p,h3{
+    
+} */

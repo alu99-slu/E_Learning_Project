@@ -1,0 +1,106 @@
+{% extends "base/index.html" %}
+{% load static %}
+
+{% block internships %}
+<div class="internship apply_intern">
+    <div class="hed">
+        <div class="heading_title pt-5 text-light">
+            <h2 id="text" class="font-weight-bold text-uppercase">Internships at <span>{{i.intern_subtitle}}</span></h2>
+        </div>
+    </div>
+    <div class="internlist container">
+        <div class="intern">
+            <div class="company_n_l d-flex align-items-center justify-content-between pb-2">
+                <h2 class="font-weight-bold">{{i.intern_title}} </h2>
+                <img src="{{i.company_img.url}}" alt="" width="150px">
+            </div>
+            <h3 class="subtitle font-weight-bold text-secondary pb-4">{{i.intern_subtitle}}</h3>
+            <div class="workingOpt d-flex text-secondary">
+                <i class="fa fa-home" aria-hidden="true"></i>
+                <p>{{i.intern_location}}</p>
+            </div>
+            <div class="inter_stats1 text-secondary">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-md-6 col-6">
+                        <i class="fa fa-play" aria-hidden="true"></i>
+                        <span>START DATE</span>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-md-6 col-6">
+                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                        <span>DURATION</span>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-md-6 col-6">
+                        <i class="fa fa-money" aria-hidden="true"></i>
+                        <span>STIPEND</span>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-md-6 col-6">
+                        <i class="fa fa-hourglass" aria-hidden="true"></i>
+                        <span>APPLY BY</span>
+                    </div>
+                </div>
+            </div>
+            <div class="inter_stats2">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-md-6 col-6">
+                        <p>{{i.intern_start_date}}</p>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-md-6 col-6">
+                        <p>{{i.intern_duration}}</p>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-md-6 col-6">
+                        <p>₹ {{i.intern_stipen}} /month</p>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-md-6 col-6">
+                        <p>{{i.intern_last_date}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="internInfos">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+                        <span class="badge badge-light">Internship</span>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+                        <span class="badge badge-light">{{i.intern_or_part_time}}</span>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+                    </div>
+                </div>
+                <br>
+                <a href="https://www.google.com/">Knwo more about Us</a>
+            </div>
+            <div class="intern_details pt-5">
+                <h4 class='font-weight-bold text-center p-5'>Internship Details:-</h4>
+                <h4 class='font-weight-bold'>About the Internship</h4>
+                <p>Selected intern's day-to-day responsibilities include:</p><br>
+                <p>1. Working on web app design and development</p>
+                <p>2. Reporting daily tasks</p><br>
+                
+                <h4 class='font-weight-bold'>Who can apply</h4>
+                <p>Only those candidates can apply who:</p>
+                <p>1. are available for the work from home job/internship</p>
+                <p>2. can start the work from home job/internship between 15th Aug'21 and 19th Sep'21</p>
+                <p>3. are available for duration of 6 months</p>
+                <p>4. have relevant skills and interests</p>
+                <p>* Women wanting to start/restart their career can also apply.</p><br>
+
+                <h4 class='font-weight-bold'>Perks</h4>
+                <span class="badge badge-light">Certificate</span>
+                <span class="badge badge-light">Flexible work hours</span>
+
+                <br><br><h4 class='font-weight-bold'>Number of openings</h4>
+                <p>2</p>
+
+                <div class="buttons text-center pt-4 pb-1">
+                    <form action="/internship_applied" class="d-inline">
+                        <input type="hidden" name="intern_id" value="{{i.id}}" id="prod_id">
+                        <button type="submit" class="btn btn-primary">Apply Now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock internships %}

@@ -1,0 +1,104 @@
+{% extends 'base/index.html' %}
+{% load static %}
+
+{% block internships %}
+<div class="internship">
+    <div class="hed">
+        <div class="heading_title pt-5 text-light">
+            <h2 id="text" class="font-weight-bold text-uppercase">Our Internships Portal</h2>
+        </div>
+    </div>
+    <div class="internlist container">
+        <div class="title pb-5">
+            <h1 class="text-center text-dark font-weight-bold">100+ internships</h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                <div class="filter" id=>
+                    <p class="text-center">Filter <i class="fa fa-filter" aria-hidden="true"></i></p>
+                    <div class="filterBox">
+                        <ul class="d-block">
+                            <li>All Internships</li>
+                            <li>Web Development</li>
+                            <li>Andorid Developemnt</li>
+                            <li>Python Programming</li>
+                            <li>Extra Courses</li>
+                            <li><i class="fa fa-plus fa-1x text-light" aria-hidden="true"></i></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-6 col-sm-12 col-12">
+                {% for i in internship %}
+                <div class="intern">
+                    <div class="company_n_l d-flex align-items-center justify-content-between pb-2">
+                        <h2 class="font-weight-bold">{{i.intern_title}} </h2>
+                        <img src="{{i.company_img.url}}" alt="" width="150px">
+                    </div>
+                    <h3 class="subtitle font-weight-bold text-secondary pb-4">{{i.intern_subtitle}}</h3>
+                    <div class="workingOpt d-flex text-secondary">
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                        <p>{{i.intern_location}}</p>
+                    </div>
+                    <div class="inter_stats1 text-secondary">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-md-6 col-6">
+                                <i class="fa fa-play" aria-hidden="true"></i>
+                                <span>START DATE</span>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-md-6 col-6">
+                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                <span>DURATION</span>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-md-6 col-6">
+                                <i class="fa fa-money" aria-hidden="true"></i>
+                                <span>STIPEND</span>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-md-6 col-6">
+                                <i class="fa fa-hourglass" aria-hidden="true"></i>
+                                <span>APPLY BY</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="inter_stats2">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-md-6 col-6">
+                                <p>{{i.intern_start_date}}</p>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-md-6 col-6">
+                                <p>{{i.intern_duration}}</p>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-md-6 col-6">
+                                <p>₹ {{i.intern_stipen}} /month</p>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-md-6 col-6">
+                                <p>{{i.intern_last_date}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="internInfos">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+                                <span class="badge badge-light">Internship</span>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+                                <span class="badge badge-light">{{i.intern_or_part_time}}</span>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+                                {% if request.user.is_authenticated %}
+                                    <a href="{% url 'apply-internships' i.id %}">apply now ></a>
+                                {% else %}
+                                    <a href="/login">apply now ></a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock internships %}

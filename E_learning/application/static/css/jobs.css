@@ -1,0 +1,104 @@
+.jobsSection .jobOpt .badge {
+    padding: 10px 15px;
+    margin-bottom: 40px;
+    border-radius: 20px;
+    font-size: var(--smallest-font);
+    border: none !important;
+    outline: none;
+    box-shadow: 0 3px 10px #019ffaf8;
+}
+.jobsSection .jobOpt .job p:hover{
+    transition: all .2s ease-in-out;
+    color: #021479;
+}
+.jobsSection .apply a{
+    padding: 5px 50px;
+    font-weight: bold;
+    background: #1a4c85;
+    border: none;
+    outline: none;
+    box-shadow: 0 1px 3px #019ffaf8;
+}
+.jobsSection .apply a:hover{
+    transition: all .1s ease-in-out;
+    color: #1a4c85;
+    background: #fff;
+    border: 2px solid #1a4c85;
+}
+.jobsSection .companyname .name img{
+    width: 50px;
+    height: 50px;
+}
+.jobsSection .jobapply .card {
+    width: 33vw;
+    margin: 20px;
+    background: rgb(228, 239, 252) ;
+}
+
+.jobsSection .jobapply .card:hover {
+    transition: all .3s ease-in-out;
+    background: linear-gradient(120deg, #00d9ffa6,#b0ebf0d8,lightblue);
+    color: var(--background-color);
+    box-shadow: 0 5px 20px #00a2ff;
+}
+.jobsapplied .card{
+    margin: 50px;
+    box-shadow: none!important;
+}
+.jobsapplied .card .jobOpt {
+    box-shadow: none!important;
+}
+.jobsapplied .card:hover {
+    box-shadow: none!important;
+}
+.jobsapplied .card .infos {
+    height: 10px;
+}
+.jobsapplied .card img{
+    width: 50px;
+    height: 50px;
+}
+.jobsapplied .card .badge {
+    padding: 10px 15px;
+    margin-bottom: 40px;
+    border-radius: 20px;
+    font-size: var(--smallest-font);
+    border: none !important;
+    outline: none;
+    box-shadow: 0 3px 10px #019ffaf8;
+}
+.jobsapplied .job_details{
+    margin: 50px;
+}
+.jobsapplied .job_details span{
+    font-weight: bolder;
+    font-size: 1.2rem;
+}
+.jobsapplied .job_details p{
+    line-height: .8;
+}
+.jobsapplied .apply button {
+    cursor: pointer;
+    color: #fff;
+    padding: 5px 50px;
+    font-weight: bold;
+    background: #1a4c85;
+    border: none;
+    outline: none;
+    box-shadow: 0 1px 3px #019ffaf8;
+}
+.jobsapplied .apply button:hover {
+    transition: all .1s ease-in-out;
+    color: #1a4c85;
+    background: #fff;
+    border: 2px solid #1a4c85;
+}
+
+@media screen and (max-width: 420px){
+    .jobOpt{
+        margin: 0!important;
+    }
+    .jobsSection .jobapply .card {
+        width: 300px;
+    }
+}

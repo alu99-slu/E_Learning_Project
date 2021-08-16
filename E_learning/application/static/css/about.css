@@ -1,0 +1,79 @@
+/* landing section */
+
+.aboutUs .aboutHed {
+    background: linear-gradient(120deg, rgb(139, 178, 238), var(--fade-primary-color), rgba(0, 0, 0, .3));
+    height: 400px;
+    width: 100%;
+    display: grid;
+    place-content: center;
+}
+.aboutUs .content{
+    margin: var(--section-dision-max);
+    padding: 0 30px;
+}
+
+/* counterUp section */
+.aboutUs .content .mission .heading_sub_title{
+    font-size: var(--mediam-font);
+}
+.aboutUs .content .mission p{
+    line-height: 1.8;
+    color: var(--small-text-color);
+}
+.aboutUs .aboutCtr{
+    margin-bottom: var(--section-dision-max);
+}
+.aboutUs .aboutCtr .plus{
+    font-size: var(--mediam-font);
+}
+.aboutUs .aboutCtr img {
+    width: 140px;
+    height: 120px;
+}
+
+/* testimonial section */
+.testimonials{
+    margin-bottom: var(--section-dision-max);
+    width: 100%;
+}
+.aboutUs .testimonials .carousel-inner{
+    height: 400px;
+}
+.aboutUs .testimonials .carousel .caroselContent{
+    padding: 20px 200px;
+    background: #a0c5d6be;
+    box-shadow: 0px 5px 20px #a0c5d6be;
+}
+.aboutUs .testimonials .carousel .caroselContent img{
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    margin-bottom: 20px;
+    border: 5px solid #060a4b;
+}
+.aboutUs .testimonials .carousel .caroselContent .rattingaAbt li{
+    margin: 3px;
+}
+
+@media screen and (max-width: 420px) {
+    .aboutUs .aboutHed {
+        height: 250px;
+    }
+
+    .aboutUs .content {
+        margin: 0;
+        padding: 0;
+    }
+
+    .aboutUs .testimonials .carousel-inner {
+        height: auto;
+    }
+
+    .aboutUs .testimonials .carousel .caroselContent {
+        padding: 20px;
+    }
+
+    .caroselContent h2 {
+        display: block;
+    }
+}

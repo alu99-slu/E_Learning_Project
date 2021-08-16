@@ -1,0 +1,73 @@
+{% extends "base/index.html" %}
+{% load static %}
+
+{% block jobs %}
+<div class="jobsapplied">
+    <div class="hed">
+        <div class="heading_title pt-5 text-light">
+            <h2 id="text" class="font-weight-bold text-uppercase">Our Courses</h2>
+        </div>
+    </div>
+    <div class="container">
+        <div class="card">
+            <div class="jobOpt">
+                <span class="badge badge-light bg-primary text-light">{{j.job_offer}}</span>
+                <div class="job">
+                    <h3 class="text-capitalize font-weight-bold">{{j.job_des}}</h3>
+                </div>
+                <div class="infos pt-4 d-flex justify-content-start align-items-center text-secondary">
+                    <div class="place">
+                        <span><i class="fa fa-location-arrow" aria-hidden="true"></i></span>
+                        <span>{{j.job_location}}</span>
+                    </div>
+                    <div class="time">
+                        <span><i class="fa fa-clock-o" aria-hidden="true"></i></span>
+                        <span>{{j.job_t_left}}</span>
+                    </div>
+                </div>
+                <div class="companyname pt-3 d-flex align-items-center justify-content-between">
+                    <div class="name d-flex align-items-center justify-content-end">
+                        <a href="https://www.google.com/" class="font-weight-bold pb-4">{{j.job_comp_name}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="job_details">
+            <h3>{{j.job_comp_name}} - Job Details</h3>
+            <hr>
+            <p>looking for {{j.job_des}} freshers can also apply</p><br>
+            <span>Job Description</span>
+            <p class="pt-2">Troubleshooting network problems and outages</p>
+            <p>Scheduling upgrades and collaborating with network architects on network optimization</p>
+            <p>Directing system installation and defining, documenting and enforcing system standards</p>
+            <p>Establish the networking environment by designing system configuration</p>
+            <p>Design and implement new solutions and improve resilience of the current environment</p>
+            <p>Maximize network performance by monitoring performance</p>
+            <p>Undertake data network fault investigations in local and wide area environments using information</p>
+            <p>from multiple sources</p>
+            <p>Secure network systems by establishing and enforcing policies, and defining and monitoring access</p>
+            <p>Support and administer firewall environments in line with IT security policy</p>
+            <p>Report network operational status by gathering and prioritizing information and managing projects</p>
+            <p>Upgrade data network equipment to the latest stable firmware releases</p>
+            <p>Configure routing and switching equipment and firewalls</p>
+            </p><br>
+            <span>Job Type:- {{j.job_offer}}</span><br><br>
+            <span>Job Summary</span><br><br>
+            <p><span> Type :</span>Internship / Projects</p>
+            <p><span> Role :</span>IT Hardware Engineer</p>
+            <p><span> Category :</span>IT/Software , Internship , BSc/BCA/BBM</p>
+            <p><span>Hiring Process :</span>Face to Face Interview</p>
+            <p><span>Who can apply :</span>Freshers and Experienced (0 to 3 Years )</p>
+            <p><span>State :</span>Tamil Nadu</p>
+            <p><span>Country :</span>India</p><br><br>
+
+            <div class="apply text-center">
+                <form action="/jobsApplied" class="d-inline">
+                    <input type="hidden" name="jobs_id" value="{{j.id}}" id="prod_id">
+                    <button type="submit" >Apply Now</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock jobs %}

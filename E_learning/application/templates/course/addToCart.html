@@ -1,0 +1,40 @@
+{% extends "base/index.html" %}
+
+{% block cartcorurse %}
+    <div class="cart_page">
+        <div class="hed">
+            <div class="heading_title pt-5 text-light">
+                <h2 id="text" class="font-weight-bold text-uppercase">Your Cart Items</h2>
+            </div>
+        </div>
+        <div class="courseSecton">
+            <div class="container d-flex align-items-center justify-content-between flex-wrap">
+            {% for cart in carts %}
+            <div class="card school">
+                <img class="card-img-top" src="{{cart.course.course_img.url}}" alt="Card image cap">
+                <div class="card-body">
+                    <h4 class="card-title text-dark">{{cart.course.title}}</h4>
+                    <p class="card-text text-info">{{cart.course.company}}</p>
+                    <div class="cardInfos1 d-flex align-items-center justify-content-between">
+                        <div class="time">
+                            <span><i class="fa fa-clock-o" aria-hidden="true"></i>{{cart.course.duration}}</span>
+                        </div>
+                        <div class="level">
+                            <span class="badge badge-light">{{cart.course.level}}</span>
+                        </div>
+                    </div>
+                    <div class="cardInfos d-flex align-items-center justify-content-center">
+                        <div class="level">
+                            <h2 >₹{{cart.course.price}}</h2>
+                        </div>
+                    </div>
+                    <form action="/course" class="text-center">
+                        <button type="submit" class="btn btn-info">Buy Now</button>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock cartcorurse %}

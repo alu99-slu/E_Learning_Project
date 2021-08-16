@@ -1,0 +1,61 @@
+.contactUs{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.errorlist li {
+    color: #f76464;
+    background: none;
+}
+.contactUs .formdata .formfield {
+    background: transparent;
+}
+.formdata form {
+    width: 840px;
+    background: linear-gradient(120deg, lightblue, #86c7dd, #79bbd1);
+    border-radius: 5px;
+    box-shadow: 0 5px 10px #00000066;
+    padding: 30px;
+    margin: 50px;
+}
+.formdata .submit a {
+    margin-top: 30px;
+    padding: 10px 40px;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    background: #060a4b;
+    color: #fff;
+    text-transform: capitalize;
+}
+.formdata .submit a:hover {
+    transition: all .3s ease-in-out;
+    background: #fff;
+    color: #060a4b;
+}
+.formdata .submit input{
+    padding: 10px 40px;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    background: #060a4b;
+    color: #fff;
+}
+.formdata .submit input:hover{
+    transition: all .3s ease-in-out;
+    background: #fff;
+    color: #060a4b;
+}
+
+@media screen and (max-width: 420px){
+    .formdata form{
+        background: none;
+        width: 100%;
+        padding: 0;
+        margin: 50px 0 0 0;
+        box-shadow: none;
+    }
+    .formdata form label{
+        margin: 0;
+        padding: 0;
+    }
+}

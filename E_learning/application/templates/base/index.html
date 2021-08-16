@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+    <link rel="stylesheet" href="{% static 'css/course.css' %}">
+    <link rel="stylesheet" href="{% static 'css/internships.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jobs.css' %}">
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+    <link rel="stylesheet" href="{% static 'css/singin.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dashboad.css' %}">
+    <link rel="stylesheet" href="{% static 'css/buycourse.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap"rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'img/logo.png' %}" type="image/x-icon">
+    <title> {% block title %}Base{% endblock title %} </title>
+</head>
+<style>
+    .errorlist {
+        padding: 0;
+        margin: 0;
+        line-height: 1;
+        color: #fff;
+    }
+
+    .filter {
+        position: sticky;
+        --webkit-position: sticky;
+        top: 150px;
+    }
+    
+    @media screen and (max-width: 420px){
+        .interOpt {
+        margin: 0;
+        padding: 5px 20px;
+        border-radius: 30px!important;
+        }
+        .company_n_l{
+            display: block!important;
+            margin-bottom: 20px;
+        }
+    }
+    .dropdown-item{
+        padding: 5px 10px;
+    }
+</style>
+
+<body>
+    {% comment %} Navbar {% endcomment %}
+    {% block navbar %}
+    <header class="header">
+        <div class="header-inner">
+            <div class="container-fluid px-lg-5">
+                <nav class="navbar navbar-expand-md my-navbar">
+                    <a class="navbar-brand" href="#">
+                        <span class="logo">
+                            <img src="{% static 'img/logo.png' %}" alt="logo" class="img-fluid"
+                                style="width: 50px; margin: -3px 0px"> Take U Forward
+                        </span>
+                    </a>
+                    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+                        data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"><i class="fa fa-bars" aria-hidden="true"></i></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="collapsibleNavId">
+                        <ul class="navbar-nav m-auto mt-2 mt-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/about">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/course">Courses</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/internships">Internships</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/jobs">Jobs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/contact">Contact Us</a>
+                            </li>
+                        </ul>
+                        <form class="form-inline my-2 my-lg-0">
+                            {% if request.user.is_authenticated %}
+                            <div class="dropdown pr-5">
+                                <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-user-o" aria-hidden="true"></i>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="/profile">Profile</a>
+                                    <a class="dropdown-item" href="/logout">Logout</a>
+                                    <a class="dropdown-item" href="{% url 'change-password' %}">Change Password</a>
+                                    <a class="dropdown-item" href="/cart">Cart Items</a>
+                                </div>
+                            </div>
+                            {% else %}
+                            <div class="user_status">
+                                <a href="/singin"><i class="fa fa-user-o" aria-hidden="true"></i> Sign Up</a>
+                                <a href="{% url 'login' %}"><i class="fa fa-lock" aria-hidden="true"></i> LogIn</a>
+                            </div>
+                            {% endif %}
+                        </form>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    {% endblock navbar %}
+
+    {% block authenticate_content %}{% endblock authenticate_content %}
+    {% block profile %}{% endblock profile %}
+    {% comment %} Home Page {% endcomment %}
+    {% block landingContent_home %}{% endblock landingContent_home %}
+    {% block courses %}{% endblock courses %}
+    {% block counterUp %}{% endblock counterUp %}
+    {% block mostPopularCourse %}{% endblock mostPopularCourse %}
+    {% block homeInternship %}{% endblock homeInternship %}
+    {% block JobPortal %}{% endblock JobPortal %}
+
+    {% comment %} About Us Page {% endcomment %}
+    {% block about %}{% endblock about %}
+
+    {% comment %} Course Page {% endcomment %}
+    {% block course %}{% endblock course %}
+    {% block buycourse %}{% endblock buycourse %}
+    {% block cartcorurse %}{% endblock cartcorurse %}
+
+    {% comment %} Internship Page {% endcomment %}
+    {% block internships %}{% endblock internships %}
+
+    {% comment %} Job Page {% endcomment %}
+    {% block jobs %}{% endblock jobs %}
+
+    {% comment %} Contact Us Page {% endcomment %}
+    {% block contact %}{% endblock contact %}
+
+    {% block footer %}
+    <div class="footer">
+        <div class="container text-capitalize">
+            <div class="feeback_icons">
+                <div class="row socialbond pt-5">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="headiing">
+                            <h2 class="text-light text-capitalize">Stay Updated</h2>
+                        </div>
+                        <div class="subscribe pt-4">
+                            <form action="">
+                                <div class="form-group d-flex">
+                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp" placeholder="Enter email">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="headiing pl-2">
+                            <h2 class="text-light text-capitalize">Let's Get Social</h2>
+                        </div>
+                        <div class="icons">
+                            <a href="https://www.facebook.com/"><i class="fa fa-facebook fa-2x text-center bg-info" aria-hidden="true"></i></a>
+                            <a href="https://www.instagram.com/"><i class="fa fa-instagram fa-2x text-center bg-danger"
+                                    aria-hidden="true"></i></a>
+                            <a href="https://www.linkedin.com/home/?originalSubdomain=in"><i class="fa fa-linkedin fa-2x text-center bg-info" aria-hidden="true"></i></a>
+                            <a href="https://twitter.com/unknown_lad0"><i class="fa fa-twitter fa-2x text-center bg-primary"
+                                    aria-hidden="true"></i></a>
+                            <a href="https://github.com/Unknown-lad-2"><i class="fa fa-github fa-2x text-center bg-dark" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row links">
+                <div class="col-lg-3">
+                    <span class=" font-weight-bold text-light">about us</span>
+                    <ul class="pt-4">
+                    {% if request.user.is_authenticated %}
+                        <li><a href="/course">online learning</a></li>
+                        <li><a href="/about">about us</a></li>
+                        <li><a href="/contact">careers</a></li>
+                        <li><a href="/contact">press center</a></li>
+                        <li><a href="/contact">become a instructor</a></li>
+                    {% else %}
+                        <li><a href="/login">online learning</a></li>
+                        <li><a href="/login">about us</a></li>
+                        <li><a href="/login">careers</a></li>
+                        <li><a href="/login">press center</a></li>
+                        <li><a href="/login">become a instructor</a></li>
+                    {% endif %}
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <span class=" font-weight-bold text-light">Campus</span>
+                    <ul class="pt-4">
+                    {% if request.user.is_authenticated %}
+                        <li><a href="/about">our plans</a></li>
+                        <li><a href="/about">free trials</a></li>
+                        <li><a href="/course">academic solution</a></li>
+                        <li><a href="/jobs">jobs solutions</a></li>
+                        <li><a href="/internships">internships</a></li>
+                    {% else %}
+                        <li><a href="/login">our plans</a></li>
+                        <li><a href="/login">free trials</a></li>
+                        <li><a href="/login">academic solution</a></li>
+                        <li><a href="/login">business solutions</a></li>
+                        <li><a href="/login">goverment solution</a></li>
+                    {% endif %}
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <span class=" font-weight-bold text-light">study</span>
+                    <ul class="pt-4">
+                    {% if request.user.is_authenticated %}
+                        <li><a href="/contact">admission policy</a></li>
+                        <li><a href="/contact">getting started</a></li>
+                        <li><a href="/contact">online application</a></li>
+                        <li><a href="/about">our information</a></li>
+                        <li><a href="/about">tution calculator</a></li>
+                    {% else %}
+                        <li><a href="/login">admission policy</a></li>
+                        <li><a href="/login">getting started</a></li>
+                        <li><a href="/login">online application</a></li>
+                        <li><a href="/login">visa information</a></li>
+                        <li><a href="/login">tution calculator</a></li>
+                    {% endif %}
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <span class=" font-weight-bold text-light">support</span>
+                    <ul class="pt-4">
+                    {% if request.user.is_authenticated %}
+                        <li><a href="/contact">support</a></li>
+                        <li><a href="/contact">contact us</a></li>
+                        <li><a href="/about">system requirements</a></li>
+                        <li><a href="/about">our records</a></li>
+                        <li><a href="/contact">site feedback</a></li>
+                    {% else %}
+                        <li><a href="/login">support</a></li>
+                        <li><a href="/login">contact us</a></li>
+                        <li><a href="/login">system requirements</a></li>
+                        <li><a href="/login">register activation key</a></li>
+                        <li><a href="/login">site feedback</a></li>
+                    {% endif %}
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright text-center pt-5">
+                <p>Copyright ©2021 All rights reserved | This template is made with <span><i class="fa fa-heart-o"
+                            aria-hidden="true"></i></span> by Team 4</p>
+            </div>
+        </div>
+    </div>
+    {% endblock footer %}
+
+    {% comment %} Javascript Files {% endcomment %}
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/list.js' %}"></script>
+    <script src="{% static 'js/home.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+
+    <script>
+    //Navbar section
+    $(function () {
+        var navbar = $('.header-inner');
+        $(window).scroll(function () {
+            if ($(window).scrollTop() <= 40) {
+                navbar.removeClass('navbar-scroll');
+            } else {
+                navbar.addClass('navbar-scroll');
+            }
+        });
+    });
+
+    //Counter Up
+    $('.count').counterUp({
+        delay: 10,
+        time: 2000
+    })
+
+    //filter part
+    $(document).ready(function () {
+        $('.list').click(function () {
+            const value = $(this).attr('data-filter');
+            if (value == 'all') {
+                $('.card').show('1000');
+            } else {
+                $('.card').not('.' + value).hide('1000');
+                $('.card').filter('.' + value).show('1000');
+            }
+        })
+    })
+
+
+    //filter part
+    $(document).ready(function () {
+        $('.list').click(function () {
+            const value = $(this).attr('data-filter');
+            if (value == 'all') {
+                $('.intern').show('1000');
+            } else {
+                $('.intern').not('.' + value).hide('1000');
+                $('.intern').filter('.' + value).show('1000');
+            }
+        })
+    })
+    </script>
+</body>
+</html>

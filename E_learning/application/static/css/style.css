@@ -1,0 +1,494 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+a{
+    text-decoration: none!important;
+}
+li{ 
+    list-style: none!important;
+}
+button:focus{
+    outline: none;
+}
+:root {
+    /* colors */
+    --dark-primary-color: #060a4b;
+    --primary-color: #1219a0;
+    --fade-primary-color: #1eade6;
+    --secondary-color: ;
+    --background-color: #fff;
+    --text-color: ;
+    --hover-color: ;
+
+    /* fontsize for destop */
+    --biggest-font: 3.8rem;
+    --heading-font: 3rem;
+    --mediam-font: 2rem;
+    --small-font: 1.5rem;
+    --smallest-font: 1rem;
+
+    /* fontsize for mobile view */
+    --biggest-font-mob: 2rem;
+    --bigger-font-mob: 1.75rem;
+    --mediam-font-mob: 1.5rem;
+    --small-font-mob: 1.25rem;
+    --smallest-font-mob: 1rem;
+
+    /* margin & padding */
+    --section-dision: 50px;
+    --section-dision-max: 150px;
+    --common-padding: 10px;
+    --min-margin-top: 30px;
+    --max-margn-top: 70px;
+    --card-padding: 0 40px;
+}
+/* Navbar Section */
+.header {
+    position: relative;
+    width: 100%;
+}
+
+.my-navbar {
+    background: #fff;
+}
+
+.header-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    background-color: var(--background-color);
+}
+
+.logo {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-family: 'STIX Two Math', serif;
+}
+
+.nav-item,
+.nav-link {
+    line-height: 36px;
+    display: block;
+    text-transform: capitalize;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000;
+    margin: 0px 10px;
+    transition: all .15s ease-in-out;
+}
+
+.nav-item,
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+.user_status a{
+    margin: 0px 5px;
+    padding: 10px 20px;
+    background: linear-gradient(120deg,#008cff,#00c3ff,#00f7ff);
+    color: #000!important;
+    border-radius: 20px;
+    font-weight: bold;
+    box-shadow: 0 1px 5px #019ffaf8;
+}
+.user_status a:hover{
+    transition: all .25s ease-in-out;
+    border: 2px solid #019ffaf8;
+    color: #fff!important;
+}
+.dropdown button{
+    background: orange!important;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+.navbar-scroll {
+    background-color: var(--background-color);
+    padding: 0;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, .4);
+    transition-duration: .6s;
+}
+
+@media screen and (max-width: 1250px) {
+    .navbar {
+        width: 100%;
+    }
+
+    .nav-item,
+    .nav-link {
+         margin: 0 5px;
+    }
+}
+
+/* Landing Content */
+.landing_content {
+    width: 100%;
+    height: 100vh;
+    background: lightblue;
+    padding: 200px 0;
+}
+.text_infos {
+    line-height: 2.2 !important;
+    padding-top: var(--max-margn-top);
+}
+
+.sub_title {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+.title h2 {
+    font-size: var(--biggest-font);
+    font-weight: bold;
+    color: var(--dark-primary-color);
+}
+
+.text_infos button {
+    margin-top: var(--min-margin-top);
+    padding: 15px 40px;
+    font-size: var(--smallest-font);
+}
+
+.homeImg img {
+    width: 100%;
+}
+
+@media screen and (max-width: 420px){
+    .landing_content{
+        padding-top: 200px;
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(120deg, pink,rgb(240, 153, 225), rgb(0, 225, 255));
+    }
+    .sub_title {
+        font-size: 1.2rem;
+    }
+    .title h2 {
+        font-size: var(--biggest-font-mob);
+    }
+    .homeImg{
+        display: none;
+    }
+    .courses_cards .col-12 {
+        margin-bottom: 30px;
+    }
+}
+
+/* Home Course Section */
+.homeCourse{
+    width: 100%;
+    height: fit-content;
+}
+/* all heading are inherited form here */
+.heading_title h2 {
+    font-size: var(--heading-font);
+}
+.homeCourse .courses_cards .home_cat {
+    width: 340px;
+    height: 400px;
+}
+.homeCourse .courses_cards .card-body {
+    height: auto;
+    padding: var(--card-padding)!important;
+}
+.home_cat {
+    box-shadow: 0 0px 5px #4f72799c;
+    margin-bottom: 30px;
+    background: rgb(228, 239, 252)!important;
+}
+.home_cat:hover {
+    transition: all .3s ease-in-out;
+    background: linear-gradient(120deg,#70a6f8,#00a2ff,#0000004d)!important;
+    color: var(--background-color)!important;
+    box-shadow: 0 5px 20px #00a2ff;
+}
+.card-body:hover a {
+    color: var(--background-color); 
+}
+.card-body:hover .card-title+.card-text {
+    color: var(--background-color);
+}
+.card-body span i{
+    padding: 40px 0;
+}
+.card-title{
+    line-height: 1.5;
+    color: var(--dark-primary-color);
+}
+.card-text{
+    color: var(--dark-primary-color);
+}
+.moreCourses a{
+    font-size: var(--smallest-font);
+    padding: 15px 30px;
+}
+
+@media screen and (max-width: 420px){
+    .heading_title h2{
+        font-size: var(--bigger-font-mob);
+    }
+}
+
+/* CounterUp Section */
+.counterUp{
+    background: rgba(0, 104, 145, 0.3);
+}
+.counterUp img {
+    border-radius: 50%;
+    background: #fff;
+    width: 120px;
+    height: 120px;
+}
+
+/* Internships Options */
+.homeInternsips{
+    margin-bottom: var(--section-dision);
+}
+.carousel-inner{
+    height: auto;
+    height: 320px;
+}
+.interOpt{
+    margin: 20px 200px;
+    background: #e6e6e6;
+    padding: 20px 40px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .4);
+    border-radius: 10px;
+}
+.interOpt:hover{
+    transition: all .3s ease-in-out;
+    box-shadow: 0 5px 20px rgba(1, 159, 250, 0.973);
+}
+.interOpt .company_n_l h2{
+    font-size: var(--small-font);
+}
+.interOpt .subtitle {
+    font-size: var(--smallest-font);
+}
+.workingOpt i{
+    padding: 3px;
+}
+.internInfos .badge{
+    padding: 5px;
+}
+
+
+/* footer */
+.footer{
+    background: #080d29!important;
+    padding-top: var(--section-dision);
+    padding-bottom: 30px;
+}
+.footer span{
+    font-size: var(--small-font);
+}
+.footer ul{
+    line-height: 2.3;
+}
+.footer ul li a{
+    color: rgba(240, 240, 240, 0.801);
+}
+.footer ul li a:hover{
+    transition: all .2s ease-in-out;
+    transform: translateX(50%);
+    color: rgb(235, 235, 235);
+}
+.footer .socialbond{
+    padding: var(--common-padding) 0 var(--max-margn-top) 0;
+}
+.footer .socialbond .headiing h2 {
+    font-size: var(--mediam-font);
+}
+.footer .form-group input{
+    width: 60%;
+    height: 60px;
+}
+.footer .form-group button{
+    width: 120px;
+}
+.footer .socialbond .icons a{
+    color: #fff;
+}
+.footer .socialbond .icons i{
+    background: grey;
+    margin: 20px 0px 0px 10px;
+    padding: 15px;
+    width: 60px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.footer .links{
+    padding-bottom: 50px;
+    border-bottom: 1px solid rgb(230, 230, 230);
+}
+.footer .copyright p{
+    color: rgb(235, 235, 235);
+}
+
+/* Job Portal Home */
+.jobportal{
+    padding-bottom: var(--section-dision-max);
+}
+.jobOpt{
+    padding: 30px 50px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .4);
+}
+.jobOpt:hover{
+    transition: all .3s ease-in-out;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .4);
+}
+.jobportal .jobOpt .badge{
+    padding: 10px 15px;
+    margin-bottom: 40px;
+    border-radius: 20px;
+    font-size: var(--smallest-font);
+    border: none!important;
+    outline: none;
+    box-shadow: 0 3px 10px rgba(1, 159, 250, 0.973);
+}
+.jobOpt .job a{
+    font-size: 1.6rem;
+    color: #000;
+    line-height: 1.1;
+}
+.jobOpt .job a:hover{
+    color: var(--fade-primary-color);
+}
+.jobOpt .infos .time {
+    padding-left: 20px;
+}
+.name img{
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .4);
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+.apply a {
+    padding: 5px 50px;
+    font-weight: bold;
+    background: #1a4c85;
+    border: none;
+    outline: none;
+    box-shadow: 0 1px 3px #019ffaf8;
+}
+.jobPage a{
+    padding: 10px 50px;
+}
+
+/* about Us page responsive */
+@media screen and (max-width: 420px) {
+    .aboutUs .aboutHed {
+        height: 250px;
+    }
+    .aboutUs .content {
+        margin: 0;
+        padding: 0;
+    }
+    .aboutUs .testimonials .carousel-inner {
+        height: auto;
+    }
+    .aboutUs .testimonials .carousel .caroselContent {
+        padding: 20px;
+    }
+    .caroselContent h2 {
+        display: block;
+    }
+}
+
+/* course page Responsive design */
+@media screen and (max-width: 420px) {
+    .hed {
+        height: 250px;
+    }
+    .filterBox ul {
+        display: block !important;
+        color: red;
+    }
+}
+
+/* Internsip Page responsive */
+@media screen and (max-width: 420px) {
+    .hed {
+        height: 250px;
+    }
+    .filter {
+        position: none;
+        top: none;
+        margin-bottom: 30px;
+    }
+    .internship #text::after {
+        content: '';
+        top: -5px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        height: 5px;
+        border-bottom: 5px solid #fff;
+    }
+    .internship #text::before {
+        content: '';
+        top: 35px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        height: 5px;
+        border-bottom: 5px solid #fff;
+    }
+    .company_n_l {
+        display: block !important;
+    }
+    .subtitle {
+        font-size: 1.3rem;
+    }
+    .intern img {
+        width: 120px !important;
+    }
+    .intern .row .fa-money,
+    .fa-hourglass {
+        padding-top: 10px;
+        padding-bottom: 20px;
+    }
+}
+
+/* Jobs Page Responsive */
+@media screen and (max-width: 880px) {
+    .hed {
+        height: 250px;
+    }
+    .hed h2 {
+        font-size: 2.1rem;
+    }
+    .jobsSection #text::before {
+        top: 40px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hed {
+        height: 250px;
+    }
+    .hed h2 {
+        font-size: 1.3rem;
+    }
+
+    .jobsSection #text::after {
+        top: -8px;
+    }
+
+    .jobsSection #text::before {
+        top: 28px;
+    }
+    .jobsSection .row {
+        margin-bottom: 0 !important;
+    }
+    .jobOpt {
+        margin-bottom: 30px !important;
+    }
+}

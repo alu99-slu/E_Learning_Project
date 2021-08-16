@@ -1,0 +1,127 @@
+.buycourse .courseSecton {
+     margin-top: var(--max-margn-top);
+     margin-bottom: var(--max-margn-top);
+ }
+
+ .buycourse .courseSecton .card {
+     width: 350px;
+     height: 520px;
+     margin: 10px;
+     margin-bottom: 40px;
+     border-radius: 20px;
+     box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+ }
+
+ .buycourse .courseSecton .card:hover {
+     transition: all .3s ease-in-out;
+     box-shadow: 0 10px 30px rgba(0, 0, 0, .3);
+ }
+
+ .buycourse .courseSecton .card img {
+     border-radius: 20px 20px 0 0;
+ }
+
+ .buycourse .courseSecton .card-body {
+     background: hsl(212, 75%, 95%);
+     border-radius: 0 0 20px 20px;
+ }
+
+ .buycourse .courseSecton .card-title {
+     line-height: 1.2;
+ }
+
+ .buycourse .courseSecton .card-title a {
+     color: #000;
+ }
+
+ .buycourse .courseSecton .card-title a:hover {
+     transition: all .2s ease-in-out;
+     color: var(--fade-primary-color);
+ }
+
+ .courses .courseSecton .card-text {
+     margin-top: -5px;
+     font-weight: bold;
+ }
+
+ .buycourse .courseSecton .cardInfos1 {
+     height: 60px;
+     margin-bottom: 20px;
+     border-bottom: 1px solid rgba(0, 0, 0, .3);
+ }
+
+ .buycourse .courseSecton .badge {
+     padding: 5px 15px;
+     background: var(--fade-primary-color);
+ }
+
+ .buycourse .courseSecton .cardInfos .time ul li img {
+     border-radius: 50%;
+     border: 5px solid #fff;
+ }
+
+ .buycourse .courseSecton .cardInfos .time ul li:nth-child(2) {
+     margin-left: -25px;
+ }
+
+ .buycourse .courseSecton .cardInfos .time ul li:nth-child(3) {
+     margin-left: -25px;
+ }
+
+ .buycourse .courseSecton .cardInfos .time ul li:nth-child(4) {
+     margin-left: -25px;
+     padding: 12px;
+     background: rgb(218, 218, 218);
+     height: 53px;
+     width: 53px;
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     ;
+     border: 5px solid #fff;
+     color: rgb(83, 83, 83);
+ }
+
+ .buycourse .courseSecton .row {
+     margin-bottom: 30px;
+ }
+
+.buycourse .itemsDetails{
+     padding: 20px 20px;
+     background: rgb(138, 188, 229)!important;
+     font-size: 1rem;
+     line-height: 1;
+     width: 40%;
+ }
+ .buycourse .itemsDetails h3{
+     font-size: 1.4rem;
+ }
+ .buycourse .buttons a{
+     background: #060a4b !important;
+     color: #fff;
+    padding: 10px 40px;
+    font-weight: bold;
+ }
+ .buycourse .buttons a:hover{
+     color: #060a4b!important;
+     border: 2px solid #060a4b!important;
+     background: #fff!important;
+ }
+
+ @media screen and (max-width: 420px){
+     .buycourse .itemsDetails {
+         padding: 20px 20px;
+         background: rgb(138, 188, 229) !important;
+         font-size: 1rem;
+         line-height: 1;
+         width: fit-content;
+     }
+      .buycourse .buttons a{
+          display: flex;
+          margin-bottom: 20px;
+          text-align: center;
+          align-items: center;
+          justify-content: center;
+      }
+ }

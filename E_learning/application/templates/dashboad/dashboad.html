@@ -1,0 +1,161 @@
+{% extends 'base/index.html' %}
+{% load static %}
+
+{% block profile %}
+<div class="profile">
+    <div class="hed">
+        <div class="heading_title pt-5 text-light">
+            <h2 id="text" class="font-weight-bold text-uppercase">Welcome {{name.first_name}} {{name.last_name}}</h2>
+        </div>
+    </div>
+    <div class="msg container text-center mt-4">
+        {% if messages %}
+        {% for message in messages %}
+        <div {% if message.tags %} class="alert alert-{{message.tags}} alert-dismissible fade show" {% endif %}>
+            <strong>{{message}}</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+    {% comment %} {% endcomment %}
+    <div class="user_profile container">
+        <div class="user_n text-center">
+            <img class="img-fluid text-center rounded-circle" src="{{request.user.customer.user_img.url}}" z
+                alt="{{name.username}}" id="updpic">
+            <h2 class="font-weight-bold pt-3 pb-2">{{name.username}}</h2>
+            <button id="editBtn">Edit Profile</button>
+        </div>
+        <div class="useritems mt-5" id="useritems">
+            <button class="tablink" onclick="openCity('about', this, '#fff')" id="defaultOpen">About</button>
+            <button class="tablink" onclick="openCity('course', this, '#fff')">Courses</button>
+            <button class="tablink" onclick="openCity('intern', this, '#fff')">Internship</button>
+            <button class="tablink" onclick="openCity('jobs', this, '#fff')">Jobs</button>
+
+            <div id="about" class="tabcontent">
+                <div class="row mt-5">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                        <p class="font-weight-bold">UserName: </p>
+                        <p class="font-weight-bold">Name: </p>
+                        <p class="font-weight-bold">Email: </p>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                        <p class="text-primary font-weight-bold">{{name.username}}</p>
+                        <p class="text-primary font-weight-bold text-capitalize">{{name.first_name}} {{name.last_name}}
+                        </p>
+                        <p class="text-primary font-weight-bold">{{name.email}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="course" class="tabcontent list_profile">
+                <h2>Course List:-</h2>
+                <div class="courseSecton table-responsive-sm">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Courses Name</th>
+                                <th scope="col">Author</th>
+                                <th scope="col">Level</th>
+                                <th scope="col">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for cart in carts %}
+                            <tr>
+                                <td>{{cart.course.title}}</td>
+                                <td>{{cart.course.company}}</td>
+                                <td>{{cart.course.level}}</td>
+                                <td>{{cart.course.price}}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="intern" class="tabcontent list_profile">
+                <h2>Internship List:-</h2>
+                <div class="courseSecton table-responsive-sm">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Position</th>
+                                <th scope="col">Company</th>
+                                <th scope="col">Location</th>
+                                <th scope="col">Offering</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for inter_list in applied_intern %}
+                           <tr>
+                                <td>{{inter_list.internship.intern_title}}</td>
+                                <td>{{inter_list.internship.intern_subtitle}}</td>
+                                <td>{{inter_list.internship.intern_location}}</td>
+                                <td>{{inter_list.internship.intern_or_part_time}}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="jobs" class="tabcontent list_profile">
+                <h2>jobs List:-</h2>
+                <div class="courseSecton table-responsive-sm">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Position</th>
+                                <th scope="col">Company</th>
+                                <th scope="col">Location</th>
+                                <th scope="col">Offering</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for job_applied in job %}
+                           <tr>
+                                <td>{{job_applied.job.job_des}}</td>
+                                <td>{{job_applied.job.job_comp_name}}</td>
+                                <td>{{job_applied.job.job_location}}</td>
+                                <td>{{job_applied.job.job_offer}}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="editprofile" id="edit">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-12 offset-lg-3 offset-md-3">
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {% for f in form %}
+                        <div class="form-group">
+                            {{f.label_tag}} {{f}}
+                        </div>
+                        {% endfor %}
+                        <div class="pic">
+                            <div class="form-group">
+                                {{user_img.label_tag}} {{user_img}}
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <input type="submit" value="Save" class="btn btn-primary w-50" id="updbtn">
+                        </div>
+                    </form>
+                    <div class="text-center">
+                        <button id="cancelCng" class="btn btn-danger w-50">Cancel</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+</div>
+{% endblock profile %}

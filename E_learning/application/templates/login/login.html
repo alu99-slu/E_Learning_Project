@@ -1,0 +1,46 @@
+{% extends 'base/index.html' %}
+{% load static %}
+
+{% block authenticate_content %}
+    <div class="signIn">
+        <div class="hed">
+            <div class="heading_title pt-5 text-light">
+                <h2 id="text" class="font-weight-bold text-uppercase">Login account</h2>
+            </div>
+        </div>
+        <div class="fromdet container">
+            <form action="" method="post" novalidate>
+                <div class="singUp_img text-center">
+                    <img src="{% static 'img/login.png' %}" alt="" width="300px">
+                </div>
+                {% csrf_token %}
+                {% for fm in form %}
+                    <div class="form-group">
+                        {{fm.label_tag}} {{fm}} <small class="text-danger">{{fm.errors|striptags }}</small>
+                    </div>
+                {% endfor %}
+                <div class="al_account font-weight-light pl-1 pb-3">
+                        <a href="{% url 'password_reset' %}">Forgot password?</a><br><br>
+                        <span>don't have an account?</span>
+                        <a href="/singin">Create Account</a>
+                    </div>
+                    <div class="submit pt-3 text-center">
+                        <input type="submit" value="SignUp" id="submit">
+                    </div><br>
+                    <h3 class="text-center">Or</h3>
+                    <br>
+                    <div class="social_logIn text-center">
+                        <a href="{% url 'social:begin' 'facebook' %}" class="bg-primary">LogIn with facebook <i class="fa fa-facebook bg-light text-primary" aria-hidden="true"></i></a>
+                        <a href="{% url 'social:begin' 'google-oauth2' %}" class="bg-danger">LogIn with Google <i class="fa fa-google bg-light text-danger" aria-hidden="true"></i></a>
+                        <a href="{% url 'social:begin' 'github' %}" class="bg-dark">LogIn with Google <i class="fa fa-github bg-light text-dark" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                {% if form.non_field_errors %}
+                    {% for error in form.non_field_errors %}
+                        <p class="alert alert-danger my-3">{{error}}</p>
+                    {% endfor %}
+                {% endif %}
+            </form>
+        </div>
+    </div>
+{% endblock authenticate_content %}

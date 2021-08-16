@@ -1,0 +1,54 @@
+{% extends 'base/index.html' %}
+{% load static %}
+<title> {% block title %}Course{% endblock title %} </title>
+{% block course %}
+    <div class="courses">
+       <div class="hed">
+            <div class="heading_title pt-5 text-light">
+                <h2 id="text" class="font-weight-bold text-uppercase">Our Courses</h2>
+            </div>
+        </div>
+        <div class="container">
+            <div class="title mt-5">
+                <p class="text-center text-dark font-weight-bold">Courses We Offer</p>
+            </div>
+            <div class="filterBox pt-5">
+            <h3 class="pb-2">Catagories:-</h3>
+                <ul class="d-flex align-items-center justify-content-start">
+                    <li><a href="#">All Courses</a></li>
+                    <li><a href="#">High School level Courses</a></li>
+                    <li><a href="#">College level Courses</a></li>
+                    <li><a href="#">Extra Courses</a></li>
+                </ul>
+            </div>
+            <div class="courseSecton d-flex flex-wrap">
+            {% for c in course %}
+                <div class="card">
+                    <img class="card-img-top" src="{{c.course_img.url}}" alt="Card image cap">
+                    <div class="card-body">
+                    {% if request.user.is_authenticated %}
+                        <h4 class="card-title"><a href="{% url 'buy-course' c.id %}">{{c.title}}</a></h4>
+                    {% else %}
+                        <h4 class="card-title"><a href="/login">{{c.title}}</a></h4>
+                    {% endif %}
+                        <p class="card-text text-info">{{c.company}}</p>
+                        <div class="cardInfos1 d-flex align-items-center justify-content-between">
+                            <div class="time">
+                                <span><i class="fa fa-clock-o" aria-hidden="true"></i> {{c.duration}}</span>
+                            </div>
+                            <div class="level">
+                                <span class="badge badge-light">{{c.level}}</span>
+                            </div>
+                        </div>
+                        <div class="cardInfos d-flex align-items-center justify-content-center">
+                            <div class="level">
+                                <h2 >₹{{c.price}}</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock course %}

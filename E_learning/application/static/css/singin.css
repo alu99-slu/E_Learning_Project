@@ -1,0 +1,109 @@
+.fromdet {
+    margin: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.fromdet form {
+    background: linear-gradient(120deg,lightblue,#86c7dd,#79bbd1);
+    width: 460px;
+    padding: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
+}
+.fromdet form small {
+    font-size: 1.05rem;
+    color: rgb(211, 26, 26) !important;
+}
+.form-group label {
+    margin: 0 !important;
+}
+.fromdet .submit input {
+    color: rgba(0, 0, 0, .3);
+    padding: 5px 40px;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    background: #060a4b;
+    color: #fff;
+    text-transform: capitalize;
+}
+.fromdet .submit input:hover {
+    transition: all .3s ease-in-out;
+    background: #fff;
+    color: #060a4b;
+}
+.al_account{
+    margin: 0;
+    padding: 0;
+}
+.al_account a{
+    color: darkblue;
+}
+.social_logIn{
+    display: grid;
+    padding: 0 0 20px 0;
+}
+.social_logIn a{
+    background: rgb(31, 51, 226);
+    margin: 5px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: floralwhite;
+}
+.social_logIn a:hover{
+    transition: .3s;
+    color: gainsboro;
+    background: dodgerblue;
+}
+.social_logIn i{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+    .singUp_img img {
+        width: 350px;
+    }
+
+@media screen and (max-width: 420px) {
+    .hed {
+        height: 150px;
+    }
+
+    .fromdet {
+        padding: 0;
+        margin: 50px 0;
+        background: none !important;
+    }
+
+    .fromdet form {
+        background: none !important;
+        padding: 0;
+        box-shadow: none;
+    }
+
+    .form-group {
+        margin-bottom: 10px !important;
+    }
+    .form-group label{
+        margin: 0 !important;
+    }
+    .submit {
+        padding: 25px 0;
+    }
+
+    .submit input:hover {
+        border: 2px solid #060a4b;
+    }
+    .singUp_img img{
+        width: 350px;
+    }
+}
+
