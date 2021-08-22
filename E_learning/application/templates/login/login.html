@@ -1,5 +1,6 @@
 {% extends 'base/index.html' %}
 {% load static %}
+<title> {% block title %}Login Account{% endblock title %} </title>
 
 {% block authenticate_content %}
     <div class="signIn">
@@ -27,13 +28,13 @@
                     <div class="submit pt-3 text-center">
                         <input type="submit" value="SignUp" id="submit">
                     </div><br>
-                    <h3 class="text-center">Or</h3>
+                    {% comment %} <h3 class="text-center">Or</h3>
                     <br>
                     <div class="social_logIn text-center">
                         <a href="{% url 'social:begin' 'facebook' %}" class="bg-primary">LogIn with facebook <i class="fa fa-facebook bg-light text-primary" aria-hidden="true"></i></a>
                         <a href="{% url 'social:begin' 'google-oauth2' %}" class="bg-danger">LogIn with Google <i class="fa fa-google bg-light text-danger" aria-hidden="true"></i></a>
                         <a href="{% url 'social:begin' 'github' %}" class="bg-dark">LogIn with Google <i class="fa fa-github bg-light text-dark" aria-hidden="true"></i></a>
-                    </div>
+                    </div> {% endcomment %}
                 </div>
                 {% if form.non_field_errors %}
                     {% for error in form.non_field_errors %}

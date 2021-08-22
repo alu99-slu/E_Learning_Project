@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import (ContactUs,Course,Cart,Customer,
-Internship,intership_apply, CourseBought, Job,job_display)
+Internship,intership_apply, Job,job_display, Course_which_Bought)
 
 
 @admin.register(Customer)
@@ -20,10 +20,9 @@ class CustomerModelAdmin(admin.ModelAdmin):
 class CartModelAdmin(admin.ModelAdmin):
     list_display = ['user', 'course']
 
-
-@admin.register(CourseBought)
-class boughtCourseModelAdmin(admin.ModelAdmin):
-    list_display = ['user', 'bcourse']
+@admin.register(Course_which_Bought)
+class buyCourseModelAdmin(admin.ModelAdmin):
+    list_display = ['user', 'buy_course']
 
 @admin.register(Internship)
 class IntershipModelAdmin(admin.ModelAdmin):

@@ -2,7 +2,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect
 from django.shortcuts import redirect, render
 from .forms import FeebbackForm
-from .models import ContactUs, Course , Cart ,Internship, intership_apply, job_display,Job
+from .models import ContactUs, Course , Cart ,Internship, intership_apply, job_display ,Job , Course_which_Bought
 from .authinticationform import singUpform, logInform, userEditForm, UserProfileImage
 from django.contrib import messages
 from django.views import View
@@ -31,31 +31,32 @@ class BuyCourse(View):
         course_list = Course.objects.get(pk=pk)
         return render(request, 'course/buycourse.html',{'course_list':course_list})
 
-def buyCourses(request):
+def buycourse(request):
     user = request.user
     course_id = request.GET.get('prod_id')
     course = Course.objects.get(id=course_id)
     Cart(user=user,course=course).save()
     return redirect('/profile')
 
-def addtocart(request):
-    user = request.user
-    course_id = request.GET.get('prod_id')
-    course = Course.objects.get(id=course_id)
-    Cart(user=user,course=course).save()
-    return redirect('/cart')
+# def coursebuy(request):
+#     user = request.user
+#     course_id = request.GET.get('buy_course')
+#     course = Course.objects.get(id=course_id)
+#     Course_which_Bought(user=user,buy_course=course).save()
+#     return redirect('/profile')
 
-def cartCourses(request):
-    if request.user.is_authenticated:
-        if request.method == 'POST':
-            user = request.user
-            cart = Cart.objects.filter(user=user)
-        else:
-            user = request.user
-            cart = Cart.objects.filter(user=user)
-        return render(request, 'course/addToCart.html',{'carts': cart})
-    else:
-        return HttpResponseRedirect('/profile/')
+# def cartCourses(request):
+#     if request.user.is_authenticated:
+#         if request.method == 'POST':
+#             user = request.user
+#             cart = Course_which_Bought.objects.filter(user=user)
+#         else:
+#             user = request.user
+#             cart = Course_which_Bought.objects.filter(user=user)
+#             print(cart)
+#         return render(request, 'course/addToCart.html',{'carts': cart})
+#     else:
+#         return HttpResponseRedirect('/profile/')
 
     
 
@@ -135,10 +136,6 @@ def profileFunctions(request):
         if request.method == 'POST':
             fm = userEditForm(request.POST, instance=request.user)
             user_img = UserProfileImage(request.POST ,instance=request.user.customer ,files=request.FILES)
-            user = request.user
-            cart = Cart.objects.filter(user=user)
-            intlist = intership_apply.objects.filter(user=user)
-            jobs = job_display.objects.filter(user=user)
             if fm.is_valid() and user_img.is_valid():
                 fm.save()
                 user_img.save()
@@ -146,16 +143,16 @@ def profileFunctions(request):
 
         else:
             user = request.user
-            cart = Cart.objects.filter(user=user)
+            buy_course = Cart.objects.filter(user=user)
             intlist = intership_apply.objects.filter(user=user)
             jobs = job_display.objects.filter(user=user)
             fm = userEditForm(instance=request.user)
             user_img = UserProfileImage(request.POST, instance=request.user.customer)
             
         return render(request, 'dashboad/dashboad.html', 
-            {'name': request.user, 'form': fm,
-            'user_img': user_img,'carts':cart,
-            'applied_intern':intlist,'job':jobs})
+            {'name': request.user, 'form': fm,'course':buy_course,
+            'user_img': user_img,'applied_intern':intlist,
+            'job':jobs})
     else:
         return HttpResponseRedirect('/profile/')
 

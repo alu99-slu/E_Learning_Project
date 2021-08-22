@@ -1,6 +1,7 @@
 {% extends 'base/index.html' %}
 {% load static %}
 <title> {% block title %}About{% endblock title %} </title>
+
 {% block about %}
 <div class="aboutUs">
     <div class="aboutHed">
@@ -77,7 +78,7 @@
         <div class="testimonials">
             <div class="heading text-center mt-5">
                 <div class="heading_title pt-2 pb-3">
-                    <h2 class="font-weight-bold text-capitalize">Our Instructors</h2>
+                    <h2 class="font-weight-bold text-capitalize">Our Builders</h2>
                 </div>
             </div>
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -85,9 +86,9 @@
                     <div class="carousel-item active">
                         <div class="caroselContent text-center">
                             <img src="{% static 'img/indrajit.jpg' %}" alt="testimonial-img">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore 
-                            quos vel numquam, possimus accusantium quis exercitationem quaerat magnam modi, 
-                            voluptatem officia eum maxime molestias praesentium voluptatibus perferendis at, a expedita.</p>
+                            <p class="text-capitalize">I am Indrajit Acharjya.My hometown is at Chinpai.
+                            On an individual front, I perceive myself as a confident, conscientious and hardworking working individual.
+                            I completed the part of the courses in this project.And I also did the documentation for this project.</p>
                             <div class="rattingaAbt d-flex align-items-center justify-content-center pb-2">
                                 <a href="#"><li><i class="fa fa-star" aria-hidden="true"></i></li></a>
                                 <a href="#"><li><i class="fa fa-star" aria-hidden="true"></i></li></a>
@@ -102,9 +103,9 @@
                     <div class="carousel-item">
                         <div class="caroselContent text-center">
                             <img src="{% static 'img/souvik.jpg' %}" alt="testimonial-img">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore 
-                            quos vel numquam, possimus accusantium quis exercitationem quaerat magnam modi, 
-                            voluptatem officia eum maxime molestias praesentium voluptatibus perferendis at, a expedita.</p>
+                            <p class="text-capitalize">Hola, Everyone. I am Souvik Acharya from Bengal Institute of Technology and Management,
+                            pursuing BCA in 2nd Year. Though I am from non-tech background but I highly like to develop new skills
+                            every semester which helps me grow better every time. </p>
                             <div class="rattingaAbt d-flex align-items-center justify-content-center pb-2">
                                 <a href="#"><li><i class="fa fa-star" aria-hidden="true"></i></li></a>
                                 <a href="#"><li><i class="fa fa-star" aria-hidden="true"></i></li></a>
@@ -119,9 +120,9 @@
                     <div class="carousel-item">
                         <div class="caroselContent text-center">
                             <img src="{% static 'img/arojit.jpg' %}" alt="testimonial-img">
-                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore 
-                            quos vel numquam, possimus accusantium quis exercitationem quaerat magnam modi, 
-                            voluptatem officia eum maxime molestias praesentium voluptatibus perferendis at, a expedita.</p>
+                             <p class="text-capitalize">Hello, Everyone I am Arojit Sarkar currently pursuing BCA in 2nd Year. I am from Bengal Institute Of Technology and Management. 
+                             I am passionate in web development and web design. 
+                             I helped my group to collect various content and Images from Internet.</p>
 
                             <div class="rattingaAbt d-flex align-items-center justify-content-center pb-2">
                                 <a href="#"><li><i class="fa fa-star" aria-hidden="true"></i></li></a>
@@ -131,15 +132,15 @@
                                 <a href="#"><li><i class="fa fa-star" aria-hidden="true"></i></li></a>
                                 <a href="#"><li><i class="fa fa-star" aria-hidden="true"></i></li></a> 
                             </div>
-                            <h3 class="font-weight-bold">Arojit Sarkar- <span class="text-warning">Cryptography</span></h3>
+                            <h3 class="font-weight-bold">Arojit Sarkar- <span class="text-secondary">Web Developer</span></h3>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <div class="caroselContent text-center">
                             <img src="{% static 'img/ankitadidi.jpg' %}" alt="testimonial-img">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore 
-                            quos vel numquam, possimus accusantium quis exercitationem quaerat magnam modi, 
-                            voluptatem officia eum maxime molestias praesentium voluptatibus perferendis at, a expedita.</p>
+                            <p class="text-capitalize">Hi, I am Ankita Dhara,4th year B.Tech student from 
+                            Dr. B. C. Roy Engineering College, Durgapur. My department is information Technology.
+                            My part was model designer in this project.</p>
                             <div class="rattingaAbt d-flex align-items-center justify-content-center pb-2">
                                 <a href="#"><li><i class="fa fa-star" aria-hidden="true"></i></li></a>
                                 <a href="#"><li><i class="fa fa-star" aria-hidden="true"></i></li></a>
@@ -148,7 +149,24 @@
                                 <a href="#"><li><i class="fa fa-star" aria-hidden="true"></i></li></a>
                                 <a href="#"><li><i class="fa fa-star" aria-hidden="true"></i></li></a>
                             </div>
-                            <h3 class="font-weight-bold">Ankita Dhara- <span class="text-success">Web Designer</span></h3>
+                            <h3 class="font-weight-bold">Ankita Dhara- <span class="text-success">Models Designer</span></h3>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="caroselContent text-center">
+                            <img src="{% static 'img/chindrima_di.jpeg' %}" alt="testimonial-img">
+                            <p class="text-capitalize">Hi, myself Chandrima Nandi. I am 4 th yr b. Tech student from Dr B C Roy Engineering College. 
+                            My department is information Technology. I am much more interested in web development and web design. 
+                            My part was documentary writing in this project.</p>
+                            <div class="rattingaAbt d-flex align-items-center justify-content-center pb-2">
+                                <a href="#"><li><i class="fa fa-star" aria-hidden="true"></i></li></a>
+                                <a href="#"><li><i class="fa fa-star" aria-hidden="true"></i></li></a>
+                                <a href="#"><li><i class="fa fa-star" aria-hidden="true"></i></li></a>
+                                <a href="#"><li><i class="fa fa-star" aria-hidden="true"></i></li></a>
+                                <a href="#"><li><i class="fa fa-star" aria-hidden="true"></i></li></a>
+                                <a href="#"><li><i class="fa fa-star" aria-hidden="true"></i></li></a>
+                            </div>
+                            <h3 class="font-weight-bold">Chandrima Nandi- <span class="text-light">Documentary Writer</span></h3>
                         </div>
                     </div>
                 </div>

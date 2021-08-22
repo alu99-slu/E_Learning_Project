@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-atdf#4d6fiex^#&m-gd&m4a^74x+v3@-u+(@ejgyq*c%=gz5)p
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['takeuforward.com', 'localhost', '127.0.0.1']
+# ALLOWED_HOSTS = ['takeuforward.com', 'localhost', '127.0.0.1']
 
 
 # Application definition

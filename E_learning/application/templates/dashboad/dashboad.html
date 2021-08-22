@@ -1,5 +1,6 @@
 {% extends 'base/index.html' %}
 {% load static %}
+<title> {% block title %}Profile {{name.username}}{% endblock title %} </title>
 
 {% block profile %}
 <div class="profile">
@@ -63,12 +64,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                        {% for cart in carts %}
+                        {% for c in course %}
                             <tr>
-                                <td>{{cart.course.title}}</td>
-                                <td>{{cart.course.company}}</td>
-                                <td>{{cart.course.level}}</td>
-                                <td>{{cart.course.price}}</td>
+                                <td>{{c.course.title}}</td>
+                                <td>{{c.course.company}}</td>
+                                <td>{{c.course.level}}</td>
+                                <td>{{c.course.price}}</td>
                             </tr>
                         {% endfor %}
                         </tbody>

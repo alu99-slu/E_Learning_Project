@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator, MinValueValidator
-from django.forms.fields import CharField
 
 class ContactUs(models.Model):
     fname=models.CharField(max_length=70)
@@ -41,12 +40,10 @@ class Cart(models.Model):
 def __str__(self):
     return str(self.id)
 
-class CourseBought(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    bcourse = models.ForeignKey(Course, on_delete=models.CASCADE)
+class Course_which_Bought(models.Model):
+    user= models.ForeignKey(User, on_delete=models.CASCADE)
+    buy_course = models.ForeignKey(Course, on_delete=models.CASCADE)
 
-def __str__(self):
-    return str(self.id)
 
 
 

@@ -88,8 +88,10 @@
  }
 
 .buycourse .itemsDetails{
+    border-radius: 20px;
      padding: 20px 20px;
-     background: rgb(138, 188, 229)!important;
+     background: linear-gradient(120deg, #409be6, #66ace6, lightblue);
+     box-shadow: 2px 5px 10px #8abce5;
      font-size: 1rem;
      line-height: 1;
      width: 40%;
@@ -98,7 +100,8 @@
      font-size: 1.4rem;
  }
  .buycourse .buttons a{
-     background: #060a4b !important;
+     font-weight: bolder;
+     background: #060a4b ;
      color: #fff;
     padding: 10px 40px;
     font-weight: bold;

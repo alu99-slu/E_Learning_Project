@@ -1,6 +1,6 @@
 {% extends 'base/index.html' %}
 {% load static %}
-
+<title> {% block title %}Buy Course{% endblock title %} </title>
 {% block buycourse %}
     <div class="buycourse">
         <div class="hed">
@@ -30,27 +30,27 @@
                         </div>
                     </div>
                 </div>
-                <div class="itemsDetails bg-light">
+                
+                <div class="itemsDetails bg-light ">
+                    <div class="img text-center">
+                        <img src="{% static '/img/course_cc.png' %}" alt="" width=200px>
+                    </div>
                     <div class="cordet d-block">
                         <h3>Course Name:-</h3>
                         <p><strong>{{course_list.title}}</strong></p>
-                    </div>
-                    <div class="cordet d-block">
                         <h3>Company Name:-</h3>
                         <p><strong>{{course_list.company}}</strong></p>
-                    </div>
-                    <div class="cordet d-block">
                         <h3>Price:-</h3>
                         <p><strong>{{course_list.price}}</strong></p>
                     </div>
                     <div class="buttons text-center pt-4 pb-1">
-                        <form action="/buy-courses" class="d-inline">
-                            <input type="hidden" name="prod_id" value="{{course_list.id}}" id="prod_id">
+                        {% comment %} <form action="/courses-bought" class="d-inline">
+                            <input type="hidden" name="buy_course" value="{{course_list.id}}" id="prod_id">
                             <button type="submit" class="btn btn-info">Buy Now</button>
-                        </form>
-                        <form action="/add-to-cart" class="d-inline">
+                        </form> {% endcomment %}
+                        <form action="/course_buy" class="d-inline">
                             <input type="hidden" name="prod_id" value="{{course_list.id}}" id="prod_id">
-                            <button type="submit" class="btn btn-primary">Add to Cart</button>
+                            <button type="submit" class="btn btn-primary">Buy Now</button>
                         </form>
                     </div>
                 </div>
